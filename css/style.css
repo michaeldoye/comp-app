@@ -1,0 +1,19 @@
+/* Empty. Add your own CSS if you like */
+.bar.bar-positive {
+    border-color: #007277;
+    background-color: #007277;
+    background-image: linear-gradient(0deg, #007277, #007277 50%, transparent 50%);
+    color: #fff;
+}
+
+.tabs-positive > .tabs, .tabs.tabs-positive {
+    border-color: #007277;
+    background-color: #007277;
+    background-image: linear-gradient(0deg, #007277, #007277 50%, transparent 50%);
+    color: #fff;
+}
+
+.angular-google-map-container {
+    height: 350px;
+
+}

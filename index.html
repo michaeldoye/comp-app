@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Todo</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
+    <script src='bower_components\underscore\underscore-min.js'></script>
+    <script src='bower_components\angular-google-maps\dist\angular-google-maps.min.js'></script>
+    <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
+    <script src="cordova.js"></script>
+</head>
+<body ng-app="compare" ng-controller="CompareCtrl">
+
+<ion-tabs class="tabs-positive tabs-icon-only">
+
+    <ion-tab title="Home" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
+        <!-- Tab 1 content -->
+        <ion-side-menus>
+            <!-- Center content -->
+            <ion-side-menu-content drag-content="true" ng-controller="ContentController">
+                <ion-header-bar align-title="center" class="bar-positive">
+                    <div class="buttons">
+                        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+                    </div>
+
+                    <h1 class="title">Title!</h1>
+
+                </ion-header-bar>
+                <!-- Map -->
+                <ion-content>
+                    <div class="angular-google-map-container" ng-controller="MapController">
+                        <google-map center="map.center" zoom="map.zoom">
+
+                            <marker coords="marker.coords">
+                            </marker>
+
+                        </google-map>
+                    </div>
+                </ion-content>
+            </ion-side-menu-content>
+            <ion-footer-bar class="bar-dark" ng-controller="MapController">
+
+            </ion-footer-bar>
+            <!-- Left menu -->
+            <ion-side-menu side="left">
+                <div class="list">
+
+                    <a class="item item-icon-left" href="#">
+                        <i class="icon ion-gear-a"></i>
+                        Settings
+                    </a>
+
+                    <a class="item item-icon-left " href="#">
+                        <i class="icon ion-ios7-cart"></i>
+                        Stores Nearby
+                    </a>
+
+                    <a class="item item-icon-left" href="#">
+                        <i class="icon ion-android-note"></i>
+                        My Lists
+                        <span class="item-note">
+                          Create New
+                        </span>
+                    </a>
+
+                    <a class="item item-icon-left" href="#">
+                        <i class="icon ion-android-forums"></i>
+                        Notifications
+                        <span class="badge badge-assertive">0</span>
+                    </a>
+
+                </div>
+            </ion-side-menu>
+        </ion-side-menus>
+    </ion-tab>
+
+    <ion-tab title="About" icon-on="ion-ios7-clock" icon-off="ion-ios7-clock-outline">
+        <!-- Tab 2 content -->
+
+    </ion-tab>
+
+    <ion-tab title="Settings" icon-on="ion-ios7-gear" icon-off="ion-ios7-gear-outline">
+        <!-- Tab 3 content -->
+        <div class="bar bar-header bar-balanced">
+            <h1 class="title">bar-balanced</h1>
+        </div>
+    </ion-tab>
+
+</ion-tabs>
+
+</body>
+</html>
